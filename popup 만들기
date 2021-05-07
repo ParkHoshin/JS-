@@ -1,0 +1,25 @@
+1.캠페인 -> 승인관리 ->대체결재자설정 팝업 버튼
+1.1승인관리 화면(ecsApprovalManager.js)
+
+var config = {
+			url : null,
+			css : null,
+			js : [
+				'common/ecsWidget',
+				'popup/PHS_popupApproverExchange', ----------->팝업시에 실제로 띄워줄 js .(팝업에 대한 상세 html이 들어간다.)
+				'baseComponent/searchForm', ----------------> form 만들어주기
+				'common/stringUtil',
+				'baseComponent/select',
+				'popup/popupAproveLine',           
+				'common/jqGridPaginate'
+			]
+		};
+    
+		if (settings) $.extend(true, config, settings);
+
+		var p = new EcsApprovalManage(config, $(this));
+		ModuleCommon.Extend(EcsApprovalManage); 
+		p.init();
+
+		return p;
+	};
